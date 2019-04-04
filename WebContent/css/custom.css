@@ -1,0 +1,111 @@
+body {
+	text-align: justify;
+	padding-top: 50px;
+}
+
+footer {
+	background-color: gray;
+	color: white;
+	padding: 50px;
+}
+
+#r2 {
+	background-color: white;
+}
+
+.navbar-nav .navbar-toggle .icon-bar {
+	background-color: black;
+}
+
+hr.linedesign {
+	width: 100px;
+	background-color: #1bdfe4;
+	height: 1px;
+}
+
+.nav .active a {
+	background-color: #46b8da !important;
+	color: white !important;
+}
+
+button.btn-design {
+	background-color: white;
+	color: #46b8da;
+}
+
+p.blue-color {
+	color: #46b8da;
+}
+
+button.btn-gray-bg {
+	background-color: gray;
+	color: white;
+}
+
+.rightAlign {
+	text-align: right;
+}
+
+.centerBtn {
+	text-align: center;
+}
+
+.trans {
+	background-color: transparent;
+}
+
+.grayText {
+	color: gray;
+}
+
+.image {
+	padding: 10px;
+}
+
+.copy {
+	color: white;
+	padding: 20px;
+	background-color: dimgray;
+}
+
+.header {
+	background-color: gray;
+	color: white;
+}
+
+.top {
+	background-image: url("../images/texture-bw.png");
+	padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+	.megamenu ul {
+		padding: 10px;
+	}
+	.megamenu>.dropdown-menu {
+		min-width: 1000px;
+	}
+}
+
+}
+}
+.dropdown-md>.dropdown-menu {
+	min-width: 450px;
+}
+
+.dropdown-lg>.dropdown-menu {
+	min-width: 850px;
+}
+
+.right-align {
+	float: right;
+}
+
+.img-responsive {
+	width: auto;
+	height: 100px !important;
+}
+
+.view-btn {
+	width: 100%;
+}
