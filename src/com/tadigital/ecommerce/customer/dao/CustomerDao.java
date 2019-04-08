@@ -92,73 +92,71 @@ public class CustomerDao extends Dao {
 		Statement stmt = openStatement(con);
 
 		try {
-			StringBuffer sql = new StringBuffer("UPDATE cust_info SET ");
+			StringBuilder sql = new StringBuilder("UPDATE cust_info SET ");
 			boolean flag = false;
 
-			if (customer.getFname() != "") {
+			if (!customer.getFname().equals("")) {
 				sql.append("fname='" + customer.getFname() + "'");
 				flag = true;
 			}
 
-			if (customer.getLname() != "") {
+			if (!customer.getLname().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("lname='" + customer.getLname() + "'");
 				flag = true;
 			}
 
-			if (customer.getGender() != "") {
+			if (!customer.getGender().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("gender='" + customer.getGender() + "'");
 				flag = true;
 			}
 
-			if (customer.getAddr() != "") {
+			if (!customer.getAddr().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("addr='" + customer.getAddr() + "'");
 				flag = true;
 			}
 
-			if (customer.getCity() != "") {
+			if (!customer.getCity().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("city='" + customer.getCity() + "'");
 				flag = true;
 			}
 
-			if (customer.getZip() != "") {
+			if (!customer.getZip().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("zip='" + customer.getZip() + "'");
 				flag = true;
 			}
 
-			if (customer.getState() != null && customer.getState() != "") {
+			if (customer.getState() != null && !customer.getState().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("state='" + customer.getState() + "'");
 				flag = true;
 			}
 
-			int i = -1;
-
-			if (customer.getCountry() != null && customer.getCountry() != "") {
+			if (customer.getCountry() != null && !customer.getCountry().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("country='" + customer.getCountry() + "'");
 				flag = true;
 			}
 
-			if (customer.getContact() != "") {
+			if (!customer.getContact().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("contact='" + customer.getContact() + "'");
 				flag = true;
 			}
 
-			if (customer.getEmail() != "") {
+			if (!customer.getEmail().equals("")) {
 				if (flag)
 					sql.append(",");
 				sql.append("email='" + customer.getEmail() + "'");
