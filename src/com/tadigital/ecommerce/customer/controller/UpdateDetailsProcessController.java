@@ -30,27 +30,36 @@ public class UpdateDetailsProcessController extends HttpServlet {
 
 		HttpSession sess = req.getSession();
 		Customer cust = (Customer) sess.getAttribute("CUSTOMERDATA");
-		Customer cust_dup = new Customer(cust);
+		Customer custDup = new Customer(cust);
+		System.out.print(custDup);
 
-		cust_dup.setFname(fname);
-		cust_dup.setLname(lname);
-		cust_dup.setGender(gender);
-		cust_dup.setAddr(addr);
-		cust_dup.setCity(city);
-		cust_dup.setZip(zip);
-		cust_dup.setState(state);
-		cust_dup.setCountry(country);
-		cust_dup.setContact(contact);
-		cust_dup.setEmail(email);
+		custDup.setFname(fname);
+		custDup.setLname(lname);
+		custDup.setGender(gender);
+		custDup.setAddr(addr);
+		custDup.setCity(city);
+		custDup.setZip(zip);
+		custDup.setState(state);
+		custDup.setCountry(country);
+		custDup.setContact(contact);
+		custDup.setEmail(email);
 
-		CustomerService cust_ser = new CustomerService();
-		boolean status = cust_ser.updateCustomerDetails(cust_dup, cust.getEmail());
+		System.out.print(custDup);
+
+		CustomerService custSer = new CustomerService();
+		boolean status = custSer.updateCustomerDetails(custDup, cust.getEmail());
 		if (status) {
 			req.setAttribute("updated", "Y");
 		} else {
 			req.setAttribute("updated", "N");
 		}
 		RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
-		rd.forward(req, resp);
+		try {
+			rd.forward(req, resp);
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} catch (ServletException se) {
+			se.printStackTrace();
+		}
 	}
 }
