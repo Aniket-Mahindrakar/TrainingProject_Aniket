@@ -19,7 +19,12 @@ public class LogoutProcessController extends HttpServlet {
 		sess.invalidate();
 
 		RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
-
-		rd.forward(req, resp);
+		try {
+			rd.forward(req, resp);
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} catch (ServletException se) {
+			se.printStackTrace();
+		}
 	}
 }
