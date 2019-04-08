@@ -23,30 +23,37 @@ public class ChangePasswordProcessController extends HttpServlet {
 
 		HttpSession sess = req.getSession();
 		Customer cust = (Customer) sess.getAttribute("CUSTOMERDATA");
-		if (oldPass.equals(cust.getPass())) {
-			req.setAttribute("oldPass", "Y");
+		try {
+			if (oldPass.equals(cust.getPass())) {
+				req.setAttribute("oldPass", "Y");
 
-			if (newPass.equals(retypePass)) {
-				req.setAttribute("newPassEretypePass", "Y");
-				cust.setPass(newPass);
+				if (newPass.equals(retypePass)) {
+					req.setAttribute("newPassEretypePass", "Y");
+					cust.setPass(newPass);
 
-				CustomerService cust_ser = new CustomerService();
-				boolean status = cust_ser.updateCustomerPassword(cust);
-				if (status) {
-					req.setAttribute("success", "Y");
+					CustomerService custSer = new CustomerService();
+					boolean status = custSer.updateCustomerPassword(cust);
+					if (status) {
+						req.setAttribute("success", "Y");
+					} else {
+						req.setAttribute("success", "N");
+					}
 				} else {
-					req.setAttribute("success", "N");
+					req.setAttribute("newPassEretypePass", "N");
 				}
-			} else {
-				req.setAttribute("newPassEretypePass", "N");
-			}
 
-			RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
-			rd.forward(req, resp);
-		} else {
-			req.setAttribute("oldPass", "N");
-			RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
-			rd.forward(req, resp);
+				RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
+				rd.forward(req, resp);
+			} else {
+				req.setAttribute("oldPass", "N");
+				RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
+				rd.forward(req, resp);
+			}
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} catch (ServletException se) {
+			se.printStackTrace();
 		}
+
 	}
 }
