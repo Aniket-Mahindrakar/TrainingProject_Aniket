@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<%! %>
 <title>Exception Page</title>
 
 <link rel="stylesheet"
@@ -19,7 +19,7 @@
 	<div class="container-fluid">
 		<!-- Row - 1 Start -->
 		<div class="row">
-			<%@ include file="Header.html"%>
+			<%@ include file="Header.jsp"%>
 		</div>
 		<!-- Row - 1 End -->
 
@@ -68,18 +68,21 @@
 					</h3>
 				</div>
 				<div class="row">
-					<button class="btn btn-info btn-design">
-						<span class="glyphicon glyphicon-home"></span> Home
-					</button>
-					<button class="btn btn-info btn-design">
-						<span class="fa fa-bug"></span> Report
-					</button>
+					<a class="btn btn-info btn-design" href="HomePage.jsp"> <span
+						class="glyphicon glyphicon-home"></span> Home
+					</a>
+					<%
+						StringWriter errors = new StringWriter();
+						exception.printStackTrace(new PrintWriter(errors));
+						session.setAttribute("EXCEPTION", errors.toString());
+					%>
+					<a class="btn btn-info btn-design" href="report"> <span
+						class="fa fa-bug"></span> Report
+					</a>
 				</div>
 				<br />
 				<div class="row alert alert-danger text-left">
 					<%
-						StringWriter errors = new StringWriter();
-						exception.printStackTrace(new PrintWriter(errors));
 						out.print(errors.toString());
 					%>
 				</div>
