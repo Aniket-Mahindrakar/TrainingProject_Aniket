@@ -77,93 +77,16 @@
 
 		<!-- Row-4 Start -->
 		<div class="row">
-			<footer>
-				<div class="container">
-					<div class="row">
-						<!-- Column-1 Start -->
-						<div class="col-md-4">
-							<p>
-								<b>ABOUT US</b>
-							</p>
-							<p>TechAspect empowers small and medium-sized businesses to
-								reach millions of customers with a number of programs that help
-								boost their revenue, reach and productivity. By telling stories
-								from a wide range of perspectives, we tell the larger story of
-								who TechAspect is and how TechAspect's core business practices
-								contribute to a better India.</p>
-							<hr />
-							<p>
-								<b>JOIN OUR MONTHLY NEWSLETTER</b>
-							</p>
-
-							<div class="input-group">
-								<input type="email" class="form-control"> <span
-									class="input-group-btn">
-									<button class="btn" type="button">
-										<span class="glyphicon glyphicon-send"></span>
-									</button>
-								</span>
-							</div>
-						</div>
-						<!-- Column-1 End -->
-
-						<!-- Column-2 Start -->
-						<div class="col-md-4 blog">
-							<p>
-								<b>BLOG</b>
-							</p>
-							<div class="row">
-								<img src="images/detailsquare1.jpg" class="col-md-3 img-circle"></img>
-								<p class="col-md-9">
-									<b>Learn more about how TechAspect is supporting small
-										businesses</b>
-								</p>
-							</div>
-							<br>
-							<div class="row">
-								<img src="images/detailsquare1.jpg" class="col-md-3 img-circle"></img>
-								<p class="col-md-9">
-									<b>Customer Success</b>
-								</p>
-							</div>
-						</div>
-						<!-- Column-2 End -->
-
-						<!-- Column-3 Start -->
-						<div class="col-md-4">
-							<p>
-								<b>CONTACT</b>
-							</p>
-							<p>TECHASPECT SOLUTIONS PVT. LTD.</p>
-							<p>PLOT NO. 38, N HEIGHTS, 3RD FLOOR</p>
-							<p>HITECH CITY PHASE 2, MADHAPUR</p>
-							<p>HYDERABAD, TELANGANA - 500081</p>
-							<p>INDIA</p>
-							<button class="btn btn-info">Go To Contact Page</button>
-						</div>
-						<!-- Column-3 End -->
-
-					</div>
-					<br>
-				</div>
-			</footer>
+			<%@ include file="Footer.html"%>
 		</div>
 		<!-- Row-4 End -->
 
 		<!-- Row-5 Start -->
 		<div class="row">
-			<div class="container-fluid copy">
-				<div class="container">
-					<div class="row">
-						<p>
-							<span class="glyphicon glyphicon-copyright-mark"></span> 2018.
-							TechAspect Solutions Private Limited.
-						</p>
-					</div>
-				</div>
-			</div>
+			<%@ include file="Copyright.html"%>
 		</div>
 		<!-- Row-5 End -->
+
 
 	</div>
 
