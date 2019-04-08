@@ -14,15 +14,17 @@ import com.tadigital.ecommerce.customer.service.CustomerService;
 
 @WebServlet("/register")
 public class RegistrationProcessController extends HttpServlet {
+	
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = (String) req.getParameter("reg_name");
+		String name = req.getParameter("reg_name");
 
-		String[] split_name = name.split(" ");
-		String fname = split_name[0];
-		String lname = split_name[1];
-		String email = (String) req.getParameter("reg_email");
-		String pass = (String) req.getParameter("reg_pwd");
+		String[] splitName = name.split(" ");
+		String fname = splitName[0];
+		String lname = splitName[1];
+		String email = req.getParameter("reg_email");
+		String pass = req.getParameter("reg_pwd");
 
 		Customer cust = new Customer();
 		cust.setFname(fname);
@@ -30,21 +32,26 @@ public class RegistrationProcessController extends HttpServlet {
 		cust.setEmail(email);
 		cust.setPass(pass);
 
-		CustomerService cust_ser = new CustomerService();
-		boolean status = cust_ser.registerCustomerDetails(cust);
-		if (status) {
-			req.setAttribute("stat", "Y");
+		CustomerService custSer = new CustomerService();
+		boolean status = custSer.registerCustomerDetails(cust);
+		try {
+			if (status) {
+				req.setAttribute("stat", "Y");
 
-			RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
+				RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
 
-			rd.forward(req, resp);
-		} else {
-			req.setAttribute("stat", "N");
+				rd.forward(req, resp);
+			} else {
+				req.setAttribute("stat", "N");
 
-			RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
+				RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
 
-			rd.forward(req, resp);
+				rd.forward(req, resp);
+			}
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} catch (ServletException se) {
+			se.printStackTrace();
 		}
 	}
-
 }
