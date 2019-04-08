@@ -1,4 +1,12 @@
 <%@ page errorPage="ErrorPage.jsp"%>
+
+<%
+	String id = (String) session.getAttribute("NAME");
+	if (id != null) {
+		RequestDispatcher rd = request.getRequestDispatcher("login");
+		rd.forward(request, response);
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +25,7 @@
 	<div class="container-fluid">
 		<!-- Row - 1 Start -->
 		<div class="row">
-			<%@ include file="Header.html"%>
+			<%@ include file="Header.jsp"%>
 		</div>
 		<!-- Row - 1 End -->
 
@@ -168,108 +176,13 @@
 
 		<!-- Row-4 Start -->
 		<div class="row">
-			<footer>
-				<div class="container">
-					<div class="row">
-						<!-- Column-1 Start -->
-						<div class="col-md-3">
-							<p>
-								<b>ABOUT US</b>
-							</p>
-							<p>Prellentesque habitant morbi tristique senectus et netus
-								et malesuada fames ac turpls egestas.</p>
-							<hr />
-							<p>
-								<b>JOIN OUR MONTHLY NEWSLETTER</b>
-							</p>
-
-							<div class="input-group">
-								<input type="email" class="form-control"> <span
-									class="input-group-btn">
-									<button class="btn" type="button">
-										<span class="glyphicon glyphicon-send"></span>
-									</button>
-								</span>
-							</div>
-						</div>
-						<!-- Column-1 End -->
-
-						<!-- Column-2 Start -->
-						<div class="col-md-3 blog">
-							<p>
-								<b>BLOG</b>
-							</p>
-							<div class="row">
-								<img src="images/detailsquare1.jpg" class="col-md-3"></img>
-								<p class="col-md-9">
-									<b>BLOG POST NAME</b>
-								</p>
-							</div>
-							<br>
-							<div class="row">
-								<img src="images/detailsquare1.jpg" class="col-md-3"></img>
-								<p class="col-md-9">
-									<b>BLOG POST NAME</b>
-								</p>
-							</div>
-							<br>
-							<div class="row">
-								<img src="images/detailsquare1.jpg" class="col-md-3"></img>
-								<p class="col-md-9">
-									<b>VERY VERY LONG BLOG POST NAME</b>
-								</p>
-							</div>
-						</div>
-						<!-- Column-2 End -->
-
-						<!-- Column-3 Start -->
-						<div class="col-md-3">
-							<p>
-								<b>CONTACT</b>
-							</p>
-							<p>TECHASPECT SOLUTIONS PVT. LTD.</p>
-							<p>PLOT NO. 38, N HEIGHTS, 3RD FLOOR</p>
-							<p>HITECH CITY PHASE 2, MADHAPUR</p>
-							<p>HYDERABAD, TELANGANA - 500081</p>
-							<p>INDIA</p>
-							<button class="btn btn-info">GO TO CONTACT PAGE</button>
-						</div>
-						<!-- Column-3 End -->
-
-						<!-- Column-4 Start -->
-						<div class="col-md-3">
-							<div class="row">
-								<img src="images/detailsquare1.jpg" class="col-md-4 image">
-								<img src="images/detailsquare2.jpg" class="col-md-4 image">
-								<img src="images/detailsquare3.jpg" class="col-md-4 image">
-							</div>
-							<div class="row">
-								<img src="images/detailsquare3.jpg" class="col-md-4 image">
-								<img src="images/detailsquare2.jpg" class="col-md-4 image">
-								<img src="images/detailsquare1.jpg" class="col-md-4 image">
-							</div>
-						</div>
-						<!-- Column-4 End -->
-
-					</div>
-					<br>
-				</div>
-			</footer>
+			<%@include file="Footer.html"%>
 		</div>
 		<!-- Row-4 End -->
 
 		<!-- Row-5 Start -->
 		<div class="row">
-			<div class="container-fluid copy">
-				<div class="container">
-					<div class="row">
-						<p>
-							<span class="glyphicon glyphicon-copyright-mark"></span> 2018.
-							TechAspect Solutions Private Limited.
-						</p>
-					</div>
-				</div>
-			</div>
+			<%@include file="Copyright.html"%>
 		</div>
 		<!-- Row-5 End -->
 
