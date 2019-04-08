@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<!-- Row - 1 Start -->
 		<div class="row">
-			<%@ include file="Header.html"%>
+			<%@ include file="Header.jsp"%>
 		</div>
 		<!-- Row - 1 End -->
 
@@ -42,7 +42,7 @@
 						<!-- Column-2 Start -->
 						<div class="col-md-3">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#">Home /</a></li>
+								<li><a href="HomePage.jsp">Home /</a></li>
 								<li><a href="#">Error /</a></li>
 							</ul>
 						</div>
@@ -66,9 +66,9 @@
 					</h3>
 				</div>
 				<div class="row">
-					<button class="btn btn-info btn-design">
-						<span class="glyphicon glyphicon-home"></span> Home
-					</button>
+					<a class="btn btn-info btn-design" href="HomePage.jsp"> <span
+						class="glyphicon glyphicon-home"></span> Home
+					</a>
 				</div>
 				<hr />
 			</div>
