@@ -19,30 +19,7 @@
 
 		<!-- Row - 1 Start -->
 		<div class="row">
-			<nav class="navbar navbar-inverse navbar-fixed-top">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#myNavbar1">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#"><small>Contact Us on
-							+91 40 66217777</small></a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="myNavbar1">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Welcome <%
-							session = request.getSession();
-							Customer cust = (Customer) session.getAttribute("CUSTOMERDATA");
-							String name = cust.getFname() + " " + cust.getLname();
-						%> <%=name%>
-						</a></li>
-						<li><a href="logout"><span
-								class="glyphicon glyphicon-log-out"></span></a></li>
-					</ul>
-				</div>
-			</nav>
+			<%@ include file="Header.jsp"%>
 		</div>
 		<!-- Row - 1 End -->
 
@@ -63,7 +40,7 @@
 						</div>
 						<div class="col-md-3">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#">HOME /</a></li>
+								<li><a href="HomePage.jsp">HOME /</a></li>
 								<li><a href="#">MY ACCOUNT</a></li>
 							</ul>
 						</div>
